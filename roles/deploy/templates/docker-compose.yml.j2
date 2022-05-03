@@ -1,0 +1,22 @@
+version: "3"
+services: 
+    # backend:
+    #   image: "{{ docker_repo }}/{{ app_name }}:{{ tag }}"
+    #   depends_on:
+    #     postgres:
+    #       condition: service_healthy
+    #     environment:
+    #         DATABASE_URL: postgress://user:password@postgres:5432/db
+    #         NODE_ENV: development
+    #         PORT: 3000
+    postgres:
+        image: postgres:13
+        healthcheck:
+            test: pg_isready -U db_user -d avito
+            interval: 10s
+            timeout: 3s
+            retries: 3
+        environment:
+            POSTGRES_PASSWORD: passwpord
+            POSTGRES_USER: user
+            POSTGRES_DB: db

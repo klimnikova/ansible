@@ -1,0 +1,7 @@
+---
+docker_user: klimnikova
+docker_hub_token: ""
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io

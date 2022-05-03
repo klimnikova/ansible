@@ -1,0 +1,5 @@
+---
+- name: deploy project
+  hosts: all
+  roles:
+    - role: deploy

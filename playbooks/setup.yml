@@ -1,0 +1,13 @@
+---
+- name: apt packges
+  hosts: all
+  roles:
+    - role: apt-packages
+- name: pip packges
+  hosts: all
+  roles:
+    - role: pip-packages
+- name: setup docker
+  hosts: all
+  roles:
+    - role: setup-docker

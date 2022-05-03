@@ -1,0 +1,6 @@
+---
+- name: ensure base apt packages were installed
+  apt: 
+    name: "{{ base_packages }}"
+    state: present
+    update_cache: yes

@@ -1,0 +1,5 @@
+---
+service_dir: "/otp/services"
+docker_repo: klimnikova
+app_name: test_app
+tag: latest

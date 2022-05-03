@@ -1,0 +1,17 @@
+---
+- name: create directory
+  file: 
+    path: "{{ service_dir }}"
+    state: directory
+    mode: "0775"
+- name: deploy the latest docker compose 
+  template: 
+    src: "docker-compose.yml.j2"
+    dest: "{{ service_dir }}/docker-compose.yml"
+    mode: "0664"
+- name: init project
+  docker_compose:
+    project_src: "{{ service_dir }}"
+    state: present
+    pull: yes
+

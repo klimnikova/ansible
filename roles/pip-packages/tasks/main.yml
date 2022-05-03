@@ -1,0 +1,6 @@
+---
+- name: ensure base python packages were installed
+  pip: 
+    name: "{{ base_packages }}"
+    state: present
+    executable: pip3
